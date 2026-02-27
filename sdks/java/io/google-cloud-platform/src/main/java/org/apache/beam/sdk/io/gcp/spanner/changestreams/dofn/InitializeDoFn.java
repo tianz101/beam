@@ -40,7 +40,7 @@ public class InitializeDoFn extends DoFn<byte[], PartitionMetadata> implements S
   // Be careful when changing this interval, as it needs to be less than the checkpointing interval
   // in Dataflow. Otherwise, if there are no records within checkpoint intervals, the consuming of
   // a change stream query might get stuck.
-  private static final long DEFAULT_HEARTBEAT_MILLIS = 2000;
+  private static final long DEFAULT_HEARTBEAT_MILLIS = 100;
 
   private final DaoFactory daoFactory;
   private final MapperFactory mapperFactory;
